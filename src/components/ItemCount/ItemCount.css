@@ -1,0 +1,57 @@
+.item-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    /*margin-top: 1.5rem;*/
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Controles + - */
+.item-count__controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-counter {
+    background: #f3f4f6; /* gris suave */
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-counter:hover {
+    background: #e5e7eb; /* gris un poco más oscuro */
+}
+
+/* Número */
+.item-count__number {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    min-width: 2rem;
+    text-align: center;
+}
+
+/* Botón agregar */
+.btn-add {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+    width: 100%;
+    max-width: auto;
+  /*max-width: 220px;*/
+}
+
+.btn-add:hover {
+    background: #1e40af;
+}

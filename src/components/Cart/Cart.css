@@ -1,0 +1,117 @@
+/* Contenedor general */
+.cart {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    /*font-family: "Segoe UI", sans-serif;*/
+}
+
+/* Items */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Un producto */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.cart-item__info h4 {
+    margin: 0 0 0.3rem;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.cart-item__info p {
+    margin: 0.2rem 0;
+    color: #555;
+}
+
+/* Botón eliminar */
+.btn-remove {
+    background: #ef4444;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-remove:hover {
+    background: #b91c1c;
+}
+
+/* Resumen */
+.cart-summary {
+    background: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.cart-summary h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.cart-summary span {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* Acciones */
+.cart-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Botones genéricos */
+.btn-primary {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: #1e40af;
+}
+
+.btn-secondary {
+    background: #f3f4f6;
+    color: #333;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: #e5e7eb;
+}
+
+/* Carrito vacío */
+.cart-empty {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 1.2rem;
+    color: #555;
+}
