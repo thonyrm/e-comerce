@@ -1,0 +1,65 @@
+/* Contenedor en grid */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem; /* espacio entre cards */
+    padding: 2rem;
+    justify-items: center; /* centra las cards */
+}
+
+/* Estilo de cada card (mismo que antes) */
+.card {
+    width: 100%;
+    max-width: 280px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+  /*font-family: "Segoe UI", sans-serif;*/
+}
+
+/* Hover efecto */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen */
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    }
+
+/* Título */
+.card h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+/* Texto */
+.card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.3rem 0;
+}
+
+/* Botón */
+.card button {
+    background: #2563eb; /* Azul */
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    margin: 0.8rem 0 1rem;
+    transition: background 0.2s ease;
+}
+
+.card button:hover {
+    background: #1e40af; /* Azul más oscuro */
+}
