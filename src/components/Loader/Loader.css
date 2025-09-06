@@ -4,11 +4,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;  /* ocupa toda la pantalla */
+    margin-top: 20px;
+   /* height: 100vh;*/  /* ocupa toda la pantalla */
     width: 100%;
-    background: #f9fafb; /* gris clarito */
+   /* background: #f9fafb;*/ /* gris clarito */
     gap: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 

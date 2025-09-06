@@ -16,7 +16,6 @@ export const CarritoProvider = ({children}) => {
         const existingItem = carrito.find(product => product.item.id === item.id);
         if (existingItem){
             const updatedCart = carrito.map(product =>{
-                 console.log(product)
                 if(product.item.id === item.id){
                     return{ ...product, cantidad: product.cantidad +cantidad}
                 }else{

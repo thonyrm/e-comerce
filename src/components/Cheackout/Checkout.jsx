@@ -14,11 +14,17 @@ const Checkout = () => {
     const [emailConfirm, setEmailConfirm] = useState("");
     const [error, setError] = useState("");
     const [orderId, setOrderId] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const manejadorFormulario = (event) =>{
         event.preventDefault();
+        
         if( !nombre || !apellido || !telefono || !email || !emailConfirm){
             setError("Por favor complete todos los campos");
+            return;
+        }
+        if (telefono.length < 8) {
+            setError("El número de teléfono debe tener al menos 8 dígitos");
             return;
         }
         if(email !== emailConfirm){
@@ -40,6 +46,7 @@ const Checkout = () => {
         };
 
         Promise.all(orden.items.map(async (itemOrden)=>{
+            setLoading(true); // 🔹 Activa spinner
             const docRef = doc(db, "productos", itemOrden.id);
             // Por cada producto en la coleccion "productos", 
             //obtengo una referencia, y a partir de esa referencia obtengo el documento
@@ -70,6 +77,10 @@ const Checkout = () => {
             })
             .catch((error) => {
                 setError(error.messge);
+
+            })
+            .finally(()=>{
+                setLoading(false);
             })
         })
 
@@ -78,60 +89,90 @@ const Checkout = () => {
     return (
         <div className='checkout-container'>
             <h2 className='checkout-title'>Checkout</h2>
-            <form onSubmit={manejadorFormulario}  className='checkout-item'>
+            <form onSubmit={manejadorFormulario}  className='checkout-form'>
                 {
                     carrito.map((item)=>(
                         <div key={item.item.id} className='checkout-item'>
                             <p><strong>{item.item.nombre}</strong> x {item.cantidad}</p>
                             <p>Precio: ${item.item.precio}</p>
                             <p>Subtotal: ${item.item.precio * item.cantidad}</p>
-                            <hr />
+                            
                         </div>
                     ))
                 }
-                <h3 className='checkout-total'> Total a pagar: ${total}</h3>
-                <h3 className='checkout-total'> Cantidad total de productos: ${cantidadTotal}</h3>
+                <div className='checkout-total'>
+                    <h3> Total a pagar: ${total}</h3>
+                    <h3> Cantidad total de productos: ${cantidadTotal}</h3>
+
+                </div>
                 <div className='form-group'>
-                    <label>Nombre</label>
+                    <label>Nombre:</label>
                     <input 
                         type="text" 
                         value={nombre}
-                        onChange={(e)=> setNombre(e.target.value)}
+                        onChange={(e)=> {
+                            setNombre(e.target.value);
+                            setError("");
+                        }}
                     />
                 </div>
                 <div className='form-group'>
-                    <label>Apellido</label>
+                    <label>Apellido: </label>
                     <input 
                         type="text" 
                         value={apellido}
-                        onChange={(e)=> setApellido(e.target.value)}
+                        onChange={(e)=> {
+                            setApellido(e.target.value);
+                            setError("");
+                        }}
                     />
                 </div>
                 <div className='form-group'>
-                    <label>Teléfono</label>
+                    <label>Teléfono: </label>
                     <input 
                         type="number" 
                         value={telefono}
-                        onChange={(e)=> setTelefono(e.target.value)}
+                        onChange={(e)=> {
+                            setTelefono(e.target.value);
+                            setError(""); 
+                        }}
                     />
                 </div>
                 <div className='form-group'>
-                    <label>Email</label>
+                    <label>Email:</label>
                     <input 
                         type="email" 
                         value={email}
-                        onChange={(e)=> setEmail(e.target.value)}
+                        onChange={(e)=> {
+                            setEmail(e.target.value);
+                            setError(""); 
+                        }}
                     />
                 </div>
                 <div className='form-group'>
-                    <label>Confirmar email</label>
+                    <label>Confirmar email:</label>
                     <input 
                         type="email" 
                         value={emailConfirm}
-                        onChange={(e)=> setEmailConfirm(e.target.value)}
+                        onChange={(e)=> {
+                            setEmailConfirm(e.target.value);
+                            setError(""); 
+                        }}
                     />
                 </div>
-                <button type='submit' className='btn-checkout'>Confirmar compra</button>
+                
+                <button 
+                    type='submit' 
+                    className='btn-checkout'
+                    disabled = {cantidadTotal === 0}
+                >
+                    {loading ? (
+                        <span className="spinner"></span>  // 🔹 spinner
+                    ) : (
+                        "Confirmar compra"
+                    )}
+                    
+                </button>
 
             </form>
             { error && <p className='checkout-error'>{error}</p> }

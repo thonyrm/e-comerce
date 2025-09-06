@@ -14,9 +14,7 @@ const ItemDetail = ({id, nombre, precio, img,stock, descripcion}) => {
         setAgregarCantidad(cantidad);
         const item = {id, nombre, precio};
         addItem(item, cantidad);
-        toast.success("Compra enviada al carrito", {autoClose:1200 , theme: 'light',position: 'top-right' })
-        //console.log("Productos agregados" + cantidad)
-
+        toast.success("Compra enviada al carrito", {autoClose:1000 , theme: 'light',position: 'top-right' })
     }
 
     return (

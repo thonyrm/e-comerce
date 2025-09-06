@@ -24,7 +24,7 @@ function App() {
             <Route path='/item/:idItem' element ={<ItemDetailsContainer/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/checkout' element={<Checkout/>}/>
-            <Route path='*' element={<Error/>}/>
+            <Route path='/*' element={<Error/>}/>
           </Routes>
         </CarritoProvider>
         <ToastContainer/>

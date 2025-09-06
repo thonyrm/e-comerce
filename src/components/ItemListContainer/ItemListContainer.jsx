@@ -10,7 +10,6 @@ const ItemListContainer = () => {
     const[productos, setProductos] = useState([]);
     const[loading, setLoading] = useState(false);
     const{categoria} = useParams();
-    console.log(categoria)
 
     useEffect(()=>{
         setLoading(true);
@@ -24,13 +23,11 @@ const ItemListContainer = () => {
                     ...doc.data(),
                 }));
                 setProductos(items);
-               
             })
             .catch((error) =>{
                 console.error("Error fetching products:", error)
             })
             .finally(()=>{
-                console.log("Productos cargados")
                 setLoading(false);
             })
     },
@@ -38,7 +35,7 @@ const ItemListContainer = () => {
     return (
         <div>
             <h2 className='textStyle'>
-                Mis Productos
+                {categoria ? "" : "Mis Productos"}
             </h2>
             {
                 loading ? <Loader/> :
