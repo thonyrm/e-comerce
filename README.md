@@ -1,12 +1,43 @@
-# React + Vite
+# 🛒 Tienda E-commerce con React y Firebase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación de **e-commerce básica**, desarrollada como práctica de un curso de **React**.  
+La app permite explorar productos de supermercado, añadirlos a un carrito y finalizar la compra generando una orden almacenada en **Firebase**.
 
-Currently, two official plugins are available:
+## 🚀 Características principales
+- 📦 Visualización de productos disponibles según su stock en tiempo real.
+- 🛍️ Carrito de compras dinámico con actualización de cantidades y totales.
+- ✅ Validación de datos de cliente al confirmar la compra.
+- 🔥 Integración con **Firebase** para persistencia de productos y órdenes.
+- 🎉 Notificaciones amigables con **Toastify**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tecnologías utilizadas
+- [Vite](https://vitejs.dev/) — entorno de desarrollo rápido.
+- [React](https://react.dev/) — librería principal.
+- [React Router DOM](https://reactrouter.com/) — navegación de la app.
+- [Firebase](https://firebase.google.com/) — base de datos y backend.
+- [React-Toastify](https://fkhadra.github.io/react-toastify/) — notificaciones.
 
-## Expanding the ESLint configuration
+## 📂 Estructura del proyecto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+├─ components/ # Componentes reutilizables (Navbar, ItemList, Loader, etc.)
+├─ context/ # Contexto de carrito (CarritoContext)
+├─ services/ # Configuración de Firebase
+└─ App.jsx # Punto de entrada principal
+
+
+## 🔧 Setup del proyecto
+
+1. Clonar el repositorio:
+   ```
+   git clone https://github.com/tu-usuario/tu-repo.git
+   ```
+2. Instalar dependencias:
+
+    ```
+    npm install
+    ```
+
+3. Ejecutar en modo desarrollo:
+    ```
+    npm run dev
+    ```
