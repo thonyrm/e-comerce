@@ -1,0 +1,38 @@
+/* Contenedor centrado */
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;  /* ocupa toda la pantalla */
+    width: 100%;
+    background: #f9fafb; /* gris clarito */
+    gap: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Animación del spinner */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #e5e7eb; /* gris claro */
+    border-top: 6px solid #2563eb; /* azul principal */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Texto debajo */
+.loader-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #374151;
+    letter-spacing: 1px;
+}
+
+/* Keyframes animación */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

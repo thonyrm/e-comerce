@@ -3,14 +3,17 @@ import { useParams } from 'react-router-dom';
 import { db } from '../../services/config';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import ItemList from '../ItemList/ItemList';
+import Loader from '../Loader/Loader';
 import './ItemListContainer.css'
 
 const ItemListContainer = () => {
     const[productos, setProductos] = useState([]);
+    const[loading, setLoading] = useState(false);
     const{categoria} = useParams();
     console.log(categoria)
 
     useEffect(()=>{
+        setLoading(true);
         const productRef = collection(db, "productos");
         const q = categoria ? query(productRef, where("categoria", "==" , categoria)) : productRef;
     
@@ -26,6 +29,10 @@ const ItemListContainer = () => {
             .catch((error) =>{
                 console.error("Error fetching products:", error)
             })
+            .finally(()=>{
+                console.log("Productos cargados")
+                setLoading(false);
+            })
     },
     [categoria]);
     return (
@@ -33,9 +40,12 @@ const ItemListContainer = () => {
             <h2 className='textStyle'>
                 Mis Productos
             </h2>
-            <div>
-                <ItemList productos={productos}/>
-            </div>
+            {
+                loading ? <Loader/> :
+                <div>
+                    <ItemList productos={productos}/>
+                </div>
+            }
         </div>
     )
 }

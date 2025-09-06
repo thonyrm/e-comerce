@@ -75,9 +75,6 @@ const Checkout = () => {
 
     }
 
-
-
-
     return (
         <div className='checkout-container'>
             <h2 className='checkout-title'>Checkout</h2>
@@ -95,7 +92,7 @@ const Checkout = () => {
                 <h3 className='checkout-total'> Total a pagar: ${total}</h3>
                 <h3 className='checkout-total'> Cantidad total de productos: ${cantidadTotal}</h3>
                 <div className='form-group'>
-                    <label htmlFor="nombre">Nombre</label>
+                    <label>Nombre</label>
                     <input 
                         type="text" 
                         value={nombre}
@@ -103,7 +100,7 @@ const Checkout = () => {
                     />
                 </div>
                 <div className='form-group'>
-                    <label htmlFor="apellido">Apellido</label>
+                    <label>Apellido</label>
                     <input 
                         type="text" 
                         value={apellido}
@@ -111,7 +108,7 @@ const Checkout = () => {
                     />
                 </div>
                 <div className='form-group'>
-                    <label htmlFor="telefono">Teléfono</label>
+                    <label>Teléfono</label>
                     <input 
                         type="number" 
                         value={telefono}
@@ -119,7 +116,7 @@ const Checkout = () => {
                     />
                 </div>
                 <div className='form-group'>
-                    <label htmlFor="email">Email</label>
+                    <label>Email</label>
                     <input 
                         type="email" 
                         value={email}
@@ -127,7 +124,7 @@ const Checkout = () => {
                     />
                 </div>
                 <div className='form-group'>
-                    <label htmlFor="telefono">Confirmar email</label>
+                    <label>Confirmar email</label>
                     <input 
                         type="email" 
                         value={emailConfirm}
@@ -144,12 +141,8 @@ const Checkout = () => {
                     <strong className='checkout-success'>
                         ¡Gracias por tu compra! Tu número de orden es : <span> {orderId}</span> 
                     </strong>
-
                 )
             }
-
-           
-        
         </div>
     )
 }

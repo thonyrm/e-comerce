@@ -6,6 +6,7 @@ import { CarritoProvider } from './context/CarritoContext'
 import Checkout from './components/Cheackout/Checkout'
 import ItemDetailsContainer from './components/ItemDetailsContainer/ItemDetailsContainer'
 import Cart from './components/Cart/Cart'
+import { ToastContainer } from 'react-toastify'
 
 import './App.css'
 
@@ -26,6 +27,7 @@ function App() {
             <Route path='*' element={<Error/>}/>
           </Routes>
         </CarritoProvider>
+        <ToastContainer/>
       </BrowserRouter>
     </>
   
