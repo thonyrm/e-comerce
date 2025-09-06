@@ -42,3 +42,7 @@ La app permite explorar productos de supermercado, añadirlos a un carrito y fin
     ```
     npm run dev
     ```
+
+## 🌐 Demo en línea
+Puedes probar el proyecto funcionando aquí:  
+👉 [Tienda E-commerce en Netlify](https://cd-ecomerce-88010.netlify.app/)
