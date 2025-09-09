@@ -30,7 +30,7 @@ La app permite explorar productos de supermercado, añadirlos a un carrito y fin
 
 1. Clonar el repositorio:
    ```
-   git clone https://github.com/tu-usuario/tu-repo.git
+   git clone https://github.com/thonyrm/e-comerce.git
    ```
 2. Instalar dependencias:
 
