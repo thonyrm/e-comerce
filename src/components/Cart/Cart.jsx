@@ -14,7 +14,6 @@ const Cart = () => {
                 <Link to='/'>
                     <button className="btn-primary">Ver productos</button>
                 </Link>
-
             </div>
         )
     }
@@ -30,9 +29,7 @@ const Cart = () => {
                     <button className="btn-secondary" onClick={()=>clearCart()}>Vaciar carrito</button>
                     <Link to= '/checkout'><button className="btn-primary">Finalizar compra</button></Link>
                 </div>
-
             </div>
-        
         </div>
     )
 }

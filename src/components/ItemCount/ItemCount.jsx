@@ -42,7 +42,6 @@ const ItemCount = ({inicial, stock,funcionAgregar}) => {
             > 
                 Agregar al carrito
             </button>
-        
         </div>
     )
 }

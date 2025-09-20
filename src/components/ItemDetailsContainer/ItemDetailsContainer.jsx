@@ -24,8 +24,6 @@ const ItemDetailsContainer = () => {
             .catch((error) =>{
                 console.log("Error fetching product :", error );
             })
-
-
     },[idItem])
 
     return (
