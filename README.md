@@ -22,7 +22,7 @@ La app permite explorar productos de supermercado, añadirlos a un carrito y fin
 ```
 ├─ components/ # Componentes reutilizables (Navbar, ItemList, Loader, etc.)
 ├─ context/ # Contexto de carrito (CarritoContext)
-├─ services/ # Configuración de Firebase
+├─ services/ # Configuración de **Firebase**
 └─ App.jsx # Punto de entrada principal
 ```
 
