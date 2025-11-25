@@ -10,7 +10,6 @@ import { ToastContainer } from 'react-toastify'
 
 import './App.css'
 
-
 function App() {
 
   return (
@@ -30,7 +29,6 @@ function App() {
         <ToastContainer/>
       </BrowserRouter>
     </>
-  
   )
 }
 
