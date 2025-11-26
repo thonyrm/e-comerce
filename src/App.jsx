@@ -7,11 +7,9 @@ import Checkout from './components/Cheackout/Checkout'
 import ItemDetailsContainer from './components/ItemDetailsContainer/ItemDetailsContainer'
 import Cart from './components/Cart/Cart'
 import { ToastContainer } from 'react-toastify'
-
 import './App.css'
 
 function App() {
-
   return (
     <>
       <BrowserRouter>
