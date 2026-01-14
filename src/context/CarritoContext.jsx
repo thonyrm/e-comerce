@@ -31,8 +31,8 @@ export const CarritoProvider = ({children}) => {
             setTotal( prev => prev + (item.precio * cantidad));
             setCantidadTotal( prev => prev + cantidad)
         }
-
     }
+    
     const deleteItem = (id) =>{
         const itemToDelete = carrito.find(product => product.item.id = id);
         setCarrito( carrito.filter(product => product.item.id !== id));
@@ -46,7 +46,6 @@ export const CarritoProvider = ({children}) => {
         setCantidadTotal(0);
     }
  
-
     return(
         
         <CarritoContext.Provider value={{carrito, total, cantidadTotal, addItem, deleteItem, clearCart}}>
