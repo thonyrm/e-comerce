@@ -83,7 +83,6 @@ const Checkout = () => {
                 setLoading(false);
             })
         })
-
     }
 
     return (
@@ -103,8 +102,8 @@ const Checkout = () => {
                 <div className='checkout-total'>
                     <h3> Total a pagar: ${total}</h3>
                     <h3> Cantidad total de productos: ${cantidadTotal}</h3>
-
                 </div>
+                
                 <div className='form-group'>
                     <label>Nombre:</label>
                     <input 
@@ -127,6 +126,7 @@ const Checkout = () => {
                         }}
                     />
                 </div>
+                
                 <div className='form-group'>
                     <label>Teléfono: </label>
                     <input 
