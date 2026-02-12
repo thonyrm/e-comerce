@@ -17,7 +17,6 @@ const CartItem = ({item, cantidad}) => {
             >
                 Eliminar
             </button>
-        
         </div>
     )
 }
