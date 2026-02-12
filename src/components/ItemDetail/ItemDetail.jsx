@@ -1,9 +1,8 @@
 import { useContext, useState } from 'react'
-import { CarritoContext } from '../../context/CarritoContext';
 import { Link } from 'react-router-dom';
-import ItemCount from '../ItemCount/ItemCount';
 import { toast } from 'react-toastify';
-
+import { CarritoContext } from '../../context/CarritoContext';
+import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css'
 
 const ItemDetail = ({id, nombre, precio, img,stock, descripcion}) => {
